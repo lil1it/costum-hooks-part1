@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import CounterCard from "./components/CounterCard";
+import InputValidate from "./components/InputValidate";
+import { Timer } from "./components/Timer";
+import styled from "styled-components";
+import Count from "./autoCounter/Count";
+import CountDown from "./autoCounter/CountDown";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <CounterCard />
+      <LineStyle />
+      <InputValidate />
+      <LineStyle />
+      <Timer />
+      <LineStyle />
+      <Count/>
+      <CountDown/>
+    </React.Fragment>
   );
 }
 
 export default App;
+
+const LineStyle = styled.hr`
+  width: 40rem;
+  height: 0.1rem;
+  background-color: blueviolet;
+  margin: 5rem 5rem;
+  box-shadow: 5px 2px 8px blueviolet;
+`;
